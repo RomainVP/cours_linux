@@ -11,17 +11,17 @@ echo "calculs disponibles : addition(+), multiplication(*), division(/)"
 read x symbole y
 
 if [ $symbole = "+" ] ; then
-	echo $(($x + $y))
+	echo "scale=2; ($x + $y)" | bc;
 fi
 if [ $symbole = "x" ] ; then
-	echo $(($x * $y))
+	echo "scale=2; ($x * $y)" | bc;
 fi
 if [ $symbole = "/" ] ; then
 	if [ $y -eq "0" ] ; then
 		echo "On ne peut pas diviser par 0"
 	fi
 	if [ $y -ne "0" ] ; then
-		echo $(($x / $y))
+		echo "scale=2; ($x / $y)" | bc;
 	fi
 fi
 
